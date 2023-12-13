@@ -31,6 +31,7 @@
 
 .fa-ghost:hover {
     transform: rotate(360deg) scale(1.2);
+    cursor: pointer;
   }
 
 .scoreScreen {
@@ -46,7 +47,7 @@
 .buttonContainer {
     display: flex;
     justify-content: center;
-    background-color: #b3e099;
+    background-color: #c06c84;
     color: #d2d3d6;
     gap: 10%;
     padding-top: 10px;
