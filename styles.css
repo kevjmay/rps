@@ -1,0 +1,129 @@
+/* The Header Styles Below */
+.header {
+    display: flex;
+    justify-content: center;
+    background-color: #1c2130;
+}
+
+.title {
+    font-family: 'Silkscreen', sans-serif;
+    color: #c06c84;
+    transform: scale(1.2);
+}
+
+/* The Screen Styles Below */
+
+.screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Silkscreen', sans-serif;
+    background-color: #777a83;
+    color: #d2d3d6;
+}
+
+.fa-ghost {
+    padding-left: 5px;
+    padding-right: 5px;
+    transition: transform 0.3s ease-in-out;
+    color: #b3e099;
+}
+
+.fa-ghost:hover {
+    transform: rotate(360deg) scale(1.2);
+  }
+
+.scoreScreen {
+    display: flex;
+    justify-content: center;
+    background-color: #bec0c7;
+    font-family: 'Silkscreen', sans-serif;
+    padding: 10px;
+}
+
+/* The Button Styles Below */
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    background-color: #b3e099;
+    color: #d2d3d6;
+    gap: 10%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.btn {
+    background-color: #c06c84;
+    color: #1c2130;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.fa-rocket, .fa-paper-plane, .fa-scissors {
+    transform: scale(0.8);
+}
+
+.fa-rocket:hover, .fa-paper-plane:hover, .fa-scissors:hover {
+    transform: scale(1);
+}
+
+button {
+    --c:  #229091; /* the color*/
+    
+    box-shadow: 0 0 0 .1em inset var(--c); 
+    --_g: linear-gradient(var(--c) 0 0) no-repeat;
+    background: 
+      var(--_g) calc(var(--_p,0%) - 100%) 0%,
+      var(--_g) calc(200% - var(--_p,0%)) 0%,
+      var(--_g) calc(var(--_p,0%) - 100%) 100%,
+      var(--_g) calc(200% - var(--_p,0%)) 100%;
+    background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+    outline-offset: .1em;
+    transition: background-size .4s, background-position 0s .4s;
+  }
+  button:hover {
+    --_p: 100%;
+    transition: background-position .4s, background-size 0s;
+  }
+  button:active {
+    box-shadow: 0 0 9e9q inset #0009; 
+    background-color: var(--c);
+    color: #fff;
+  }
+  
+  button {
+    font-family: system-ui, sans-serif;
+    font-size: 3.5rem;
+    cursor: pointer;
+    padding: .1em .6em;
+    font-weight: bold;  
+    border: none;
+  }
+
+/* The Footer Styles Below */
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Silkscreen', sans-serif;
+    font-weight: 10px;
+    background-color: #1c2130;
+    color: #d2d3d6;
+}
+
+.endPara {
+    transform: scale(0.8);
+}
+
+.fa-github {
+    padding-left: 5px;
+    color: #c06c84;
+    font-size: 24px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .fa-github:hover {
+    transform: rotate(360deg) scale(1.2);
+  }
+

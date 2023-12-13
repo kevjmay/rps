@@ -1,5 +1,5 @@
 //Input to allow the player selection.
-let playerSelection = String(prompt("Select either 'Rock', 'Paper' or 'Scissors': ")).toLowerCase()
+//let playerSelection = String(prompt("Select either 'Rock', 'Paper' or 'Scissors': ")).toLowerCase()
     
 //Random number to select computer choice from array length.
 
@@ -49,5 +49,5 @@ function computerChoice() {
         console.log(`The final scores were! P:${playerScore} and C: ${computerScore}`)
     }
 
-    game()
+    //game()
 //playRound(playerSelection, computerSelection)
