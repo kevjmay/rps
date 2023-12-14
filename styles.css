@@ -1,4 +1,14 @@
 /* The Header Styles Below */
+body {
+  background-color: #1c2130;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+body > * {
+  flex-shrink: 0;
+}
+
 .header {
     display: flex;
     justify-content: center;
@@ -25,21 +35,56 @@
 .fa-ghost {
     padding-left: 5px;
     padding-right: 5px;
+    transform: scale(1.2);
     transition: transform 0.3s ease-in-out;
+    
     color: #b3e099;
 }
 
 .fa-ghost:hover {
-    transform: rotate(360deg) scale(1.2);
+    transform: scale(1.4);
     cursor: pointer;
   }
 
 .scoreScreen {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     background-color: #bec0c7;
     font-family: 'Silkscreen', sans-serif;
     padding: 10px;
+}
+
+#scoreCount {
+  display: flex;
+  justify-content: space-around;
+  padding-left: 10px;
+  padding-right: 10px;
+  gap: 10%;
+  color: #c06c84;
+  font-size: large;
+  font-weight: 500;
+  transform: scale(3);
+}
+
+.splitScores {
+  display: flex;
+  justify-content: space-around;
+  padding-left: 10px;
+  padding-right: 10px;
+  /* border: 1px solid red; */
+}
+
+.choiceScreen {
+  display: flex;
+  justify-content: center;
+  background-color: #bec0c7;
+  font-family: 'Silkscreen', sans-serif;
+  padding: 2px;
+  /* border: 1px solid black; */
+}
+
+.choiceText {
+  transform: scale(0.7);
 }
 
 /* The Button Styles Below */
@@ -61,11 +106,11 @@
     padding-right: 10px;
 }
 
-.fa-rocket, .fa-paper-plane, .fa-scissors {
+.fa-hand-rock, .fa-paper-plane, .fa-scissors {
     transform: scale(0.8);
 }
 
-.fa-rocket:hover, .fa-paper-plane:hover, .fa-scissors:hover {
+.fa-hand-rock:hover, .fa-paper-plane:hover, .fa-scissors:hover {
     transform: scale(1);
 }
 
@@ -114,7 +159,7 @@ button {
 }
 
 .endPara {
-    transform: scale(0.8);
+    transform: scale(0.6);
 }
 
 .fa-github {

@@ -1,99 +1,156 @@
 //Random number to select computer choice from array length.
 
 let playerChoice = "";
+let compChoice = "";
 
-let screen = document.querySelector('.scoreScreen')
+let screen = document.querySelector('.choiceText')
 
-//Set playerChoice to rock
-let rocket = document.querySelector('.fa-rocket')
+//Set playerChoice to rock & compChoice to random
+let rocket = document.querySelector('.fa-hand-rock')
 rocket.addEventListener('click', rockChoice);
 
 function rockChoice () {
     playerChoice = 'rock';
-    screen.textContent = playerChoice
+    computerChoice()
+    screen.textContent = `| Player: ${playerChoice} | ** | Computer: ${compChoice} |`;
+    gameRound()
     return playerChoice
 }
 
-//Set playerChoice to paper
+//Set playerChoice to paper & compChoice to random
 let paper = document.querySelector('.fa-paper-plane')
 paper.addEventListener('click', paperChoice);
 
 function paperChoice () {
     playerChoice = 'paper';
-    screen.textContent = playerChoice
+    computerChoice()
+    screen.textContent = `| Player: ${playerChoice} | ** | Computer: ${compChoice} |`;
+    gameRound()
     return playerChoice
 }
 
-//Set playerChoice to scissors
+//Set playerChoice to scissors & compChoice to random
 let scissors = document.querySelector('.fa-scissors')
 scissors.addEventListener('click', scissorChoice);
 
 function scissorChoice () {
     playerChoice = 'scissors';
-    screen.textContent = playerChoice
+    computerChoice()
+    screen.textContent = `| Player: ${playerChoice} | ** | Computer: ${compChoice} |`;
+    gameRound()
     return playerChoice
 }
 
-
+//Set compChoice to random either rock, paper, or scissors
 function computerChoice() {
     let choice = ['rock', 'paper', 'scissors']
-    return choice[Math.floor(Math.random() * 3)]
+    compChoice = choice[Math.floor(Math.random() * 3)]
+    return compChoice
 }
 
-    let playerScore = 0;
-    let computerScore = 0;
-    
-    //Function which takes two selections and plays the game:
-    function playRound(playerSelection) {
+//Assigns both scores to 0
+let playerScore = 0;
+let computerScore = 0;
 
-        //This assigns the return from computerChoice to computerSelection
-        let computerSelection = computerChoice();
+//Links above variables to html
+let pScore = document.querySelector('.playerScore');
+let cScore = document.querySelector('.compScore');
 
-        if (playerSelection === computerSelection) {
-            console.log(`There was a tie, P: ${playerSelection} and C: ${computerSelection}. Please select again!`)
-        } else if (playerSelection === "rock" && computerSelection === "scissors") {
-            console.log(`Player has won, P: ${playerSelection} and C: ${computerSelection}`)
-            playerScore++
-        } else if (playerSelection === "paper" && computerSelection === "rock") {
-            console.log(`Player has won, P: ${playerSelection} and C: ${computerSelection}`)
-            playerScore++
-        } else if (playerSelection === "scissors" && computerSelection === "paper") {
-            console.log(`Player has won, P: ${playerSelection} and C: ${computerSelection}`)
-            playerScore++
-        } else {
-            console.log(`Computer has won, P: ${playerSelection} and C: ${computerSelection}`)
-            computerScore++
-        };
-    
-    }
+//Game logic - function called when either button choice is clicked and scores are updated
+function gameRound() {
 
-    function game() {
-    
-        for (i = 1; i<=4; i++) {
-            playRound(playerSelection);
-            playerSelection = (prompt("Choose again, player: "));
+    if (playerChoice === compChoice) {
+        boo()
+
+        playerScore = 0
+        pScore.textContent = playerScore
+
+        computerScore = 0
+        cScore.textContent = computerScore
+
+    } else if (playerChoice === "rock" && compChoice === "scissors") {
         
-            if (playerScore >= 3) {
-                console.log(`The player has won! P:${playerScore} and C: ${computerScore}`)
-            } else if (computerScore >= 3) {
-                console.log(`The computer has won! P:${playerScore} and C: ${computerScore}`)
-            } 
+        playerScore++ 
+        pScore.textContent = playerScore
+
+        cScore.textContent = computerScore
+
+        if (playerScore >= 3) {
+            woo()
+            playerScore = 0
+            pScore.textContent = playerScore
+
+            computerScore = 0
+            cScore.textContent = computerScore
         }
-        console.log(`The final scores were! P:${playerScore} and C: ${computerScore}`)
+
+    } else if (playerChoice === "paper" && compChoice === "rock") {
+        
+        playerScore++
+        pScore.textContent = playerScore
+
+        cScore.textContent = computerScore
+
+        if (playerScore >= 3) {
+            woo()
+            playerScore = 0
+            pScore.textContent = playerScore
+
+            computerScore = 0
+            cScore.textContent = computerScore
+        }
+
+    } else if (playerChoice === "scissors" && compChoice === "paper") {
+        
+        playerScore++
+        pScore.textContent = playerScore
+
+        cScore.textContent = computerScore
+
+        if (playerScore >= 3) {
+            woo()
+            playerScore = 0
+            pScore.textContent = playerScore
+
+            computerScore = 0
+            cScore.textContent = computerScore
+        }
+
+    } else {
+
+        pScore.textContent = playerScore
+
+        computerScore++
+        cScore.textContent = computerScore
+
+        if (computerScore >= 3) {
+            foo()
+            playerScore = 0
+            pScore.textContent = playerScore
+
+            computerScore = 0
+            cScore.textContent = computerScore
+        }
     }
+}
 
-    
-
-
-    //game()
-//playRound(playerSelection, computerSelection)
-
-//Ghost easter egg
+//Ghost easter eggs
 let ghostie = document.querySelector('.fa-ghost')
     
-    ghostie.addEventListener('click', boo);
+    ghostie.addEventListener('click', boo2);
 
 function boo(){
-    alert("Ghostie says boo!");
-    console.log("Ghostie says boo!");
+    alert("A tie!!? Ghostie says boo! Scores reset!");
+}
+
+function woo(){
+    alert("Three points!!? Ghostie says woo! Player wins!");
+}
+
+function foo(){
+    alert("Ekkk!! Ghostie says this is awks! Computer wins!");
+}
+
+function boo2(){
+    alert("Hello I'm Ghostie!");
 }
